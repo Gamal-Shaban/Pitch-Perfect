@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eE9-bc-GgS">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Recording View Controller-->
+        <!--Pitch Perfect-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecordingViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,71 +17,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRC-bC-IZ9">
-                                <rect key="frame" x="250" y="250" width="100" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-kI-D3s">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FxZ-sB-imV">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="536"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRC-bC-IZ9">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="313"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="4Xx-Md-KJW"/>
+                                                    <constraint firstAttribute="width" constant="104" id="5K8-g6-MnY"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Wln-uc-mE7"/>
+                                                    <constraint firstAttribute="height" constant="30" id="qVV-So-lNq"/>
+                                                </constraints>
+                                                <state key="normal" image="recordButton">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="4Xx-Md-KJW"/>
+                                                        <exclude reference="5K8-g6-MnY"/>
+                                                        <exclude reference="Wln-uc-mE7"/>
+                                                        <exclude reference="qVV-So-lNq"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3i5-tH-r1p"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5L-CL-58e">
+                                                <rect key="frame" x="0.0" y="313" width="560" height="66"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="234" id="6ji-0F-IoC"/>
+                                                    <constraint firstAttribute="width" constant="110" id="HhD-ok-iRA"/>
+                                                    <constraint firstAttribute="height" constant="27" id="hTe-iN-o1B"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="u8A-JP-T9K"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="6ji-0F-IoC"/>
+                                                        <exclude reference="HhD-ok-iRA"/>
+                                                        <exclude reference="hTe-iN-o1B"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irg-Vo-DRd">
+                                                <rect key="frame" x="0.0" y="379" width="560" height="157"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="104" id="FWR-On-xoT"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="W7m-CW-NLc"/>
+                                                </constraints>
+                                                <state key="normal" image="stopButton">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="FWR-On-xoT"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="stopRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LSG-kg-EWf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="4Xx-Md-KJW"/>
-                                    <constraint firstAttribute="width" constant="104" id="5K8-g6-MnY"/>
-                                    <constraint firstAttribute="width" constant="100" id="Wln-uc-mE7"/>
-                                    <constraint firstAttribute="height" constant="30" id="qVV-So-lNq"/>
+                                    <constraint firstItem="FxZ-sB-imV" firstAttribute="leading" secondItem="rWH-kI-D3s" secondAttribute="leading" id="Wgc-n6-4jz"/>
+                                    <constraint firstAttribute="trailing" secondItem="FxZ-sB-imV" secondAttribute="trailing" id="eF4-xf-F4J"/>
+                                    <constraint firstAttribute="bottom" secondItem="FxZ-sB-imV" secondAttribute="bottom" id="fs9-rQ-sxL"/>
+                                    <constraint firstItem="FxZ-sB-imV" firstAttribute="top" secondItem="rWH-kI-D3s" secondAttribute="top" id="o3s-PR-lhF"/>
                                 </constraints>
-                                <state key="normal" image="recordButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5K8-g6-MnY"/>
-                                        <exclude reference="qVV-So-lNq"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3i5-tH-r1p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irg-Vo-DRd">
-                                <rect key="frame" x="248" y="417" width="104" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="FWR-On-xoT"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="W7m-CW-NLc"/>
-                                </constraints>
-                                <state key="normal" image="stopButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LSG-kg-EWf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5L-CL-58e">
-                                <rect key="frame" x="183" y="370" width="234" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="234" id="6ji-0F-IoC"/>
-                                    <constraint firstAttribute="width" constant="110" id="HhD-ok-iRA"/>
-                                    <constraint firstAttribute="height" constant="27" id="hTe-iN-o1B"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="u8A-JP-T9K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="HhD-ok-iRA"/>
-                                    </mask>
-                                </variation>
-                            </label>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="irg-Vo-DRd" firstAttribute="top" secondItem="a5L-CL-58e" secondAttribute="bottom" constant="20" id="4NW-XX-Ibd"/>
-                            <constraint firstItem="IRC-bC-IZ9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A04-FP-Uz2"/>
-                            <constraint firstItem="IRC-bC-IZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OOz-bI-2Sa"/>
-                            <constraint firstItem="a5L-CL-58e" firstAttribute="centerX" secondItem="IRC-bC-IZ9" secondAttribute="centerX" id="Pli-Vc-N3O"/>
-                            <constraint firstItem="a5L-CL-58e" firstAttribute="top" secondItem="IRC-bC-IZ9" secondAttribute="bottom" constant="20" id="ZLw-7g-fqP"/>
-                            <constraint firstItem="irg-Vo-DRd" firstAttribute="centerX" secondItem="a5L-CL-58e" secondAttribute="centerX" id="bmG-gy-yvl"/>
+                            <constraint firstItem="rWH-kI-D3s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ExV-y8-gb5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rWH-kI-D3s" secondAttribute="bottom" id="NGY-8A-se1"/>
+                            <constraint firstItem="rWH-kI-D3s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aY6-8C-6Lb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rWH-kI-D3s" secondAttribute="trailing" id="xem-Ch-kxG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="h5Q-to-P7u"/>
+                    <navigationItem key="navigationItem" title="Pitch Perfect" id="h5Q-to-P7u"/>
                     <connections>
                         <outlet property="recordingButton" destination="IRC-bC-IZ9" id="KfY-uG-1on"/>
                         <outlet property="recordingLabel" destination="a5L-CL-58e" id="Nep-9Y-8Zc"/>
